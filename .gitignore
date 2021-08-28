@@ -127,3 +127,45 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# History Folders from EditPad
+/__history
+/__history/**
+/__history/**/
+
+# Synchronization folders from Allway Sync
+/_SYNCAPP
+/_SYNCAPP/**
+/_SYNCAPP/**/
+/scripts/_SYNCAPP
+/scripts/_SYNCAPP/**
+/scripts/_SYNCAPP/**/
+
+# Windows CMD Files
+*.[Cc][Mm][Dd]
+/scripts/*.[Cc][Mm][Dd]
+/scripts/__Windows.CMD
+/scripts/__Windows.CMD/**
+/scripts/__Windows.CMD/**/
+
+# Scripts Updates and Fixes folders, since internal
+/scripts/_fixes
+/scripts/_fixes/**
+/scripts/_fixes/**/
+/scripts/__Updates
+/scripts/__Updates/**
+/scripts/__Updates/**/
+

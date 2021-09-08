@@ -9,7 +9,7 @@
 # APPLY WITHIN THE SPECIFICS THEIR RESPECTIVE UTILIZATION AGREEMENTS AND LICENSES.  AUTHOR DOES NOT
 # AUTHORIZE RESALE, LEASE, OR CHARGE FOR UTILIZATION OF THESE SCRIPTS BY ANY THIRD PARTY.
 #
-# SCRIPT  Private variables configuration for bash shell launch - Ubuntu
+# SCRIPT  Private variables configuration for bash shell launch - RHEL
 #
 #
 ScriptDate=2021-09-03
@@ -59,7 +59,7 @@ export MYTFTPSERVER1=10.69.248.60
 export MYTFTPSERVER2=
 export MYTFTPSERVER3=
 export MYTFTPSERVER=${MYTFTPSERVER1}
-export MYTFTPFOLDER=/__linux.ubuntu
+export MYTFTPFOLDER=/__linux.rhel
 
 
 #========================================================================================

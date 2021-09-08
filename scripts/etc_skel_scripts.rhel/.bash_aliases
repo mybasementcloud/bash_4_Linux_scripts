@@ -9,7 +9,7 @@
 # APPLY WITHIN THE SPECIFICS THEIR RESPECTIVE UTILIZATION AGREEMENTS AND LICENSES.  AUTHOR DOES NOT
 # AUTHORIZE RESALE, LEASE, OR CHARGE FOR UTILIZATION OF THESE SCRIPTS BY ANY THIRD PARTY.
 #
-# SCRIPT  [.bash_aliases] Alias commands and variables configuration for bash shell launch - Ubuntu
+# SCRIPT  [.bash_aliases] Alias commands and variables configuration for bash shell launch - RHEL
 #
 #
 ScriptDate=2021-09-03
@@ -79,7 +79,7 @@ bkDEFAULT=`tput setab 9`
 
 
 echo ${tCYAN}'==============================================================================='${tDEFAULT}
-echo ${tCYAN}' MyBasementCloud bash 4 Linux Environment'${tDEFAULT}
+echo ${tCYAN}' MyBasementCloud bash 4 Linux RHEL Environment'${tDEFAULT}
 echo ${tCYAN}' Scripts :  Version '${ScriptVersion}', Revision '${ScriptRevision}', Level '${AliasCommandsLevel}' from Date '${ScriptDate}${tDEFAULT}
 echo ${tCYAN}'==============================================================================='${tDEFAULT}
 echo
@@ -110,7 +110,7 @@ touch ${ENVIRONMENTVARSFILE}
 echo >> ${ENVIRONMENTHELPFILE}
 echo '===============================================================================' >> ${ENVIRONMENTHELPFILE}
 echo '===============================================================================' >> ${ENVIRONMENTHELPFILE}
-echo 'MyBasementCloud bash 4 Linux Environment' >> ${ENVIRONMENTHELPFILE}
+echo 'MyBasementCloud bash 4 Linux RHEL Environment' >> ${ENVIRONMENTHELPFILE}
 echo 'Scripts :  Version '${ScriptVersion}', Revision '${ScriptRevision}', Level '${AliasCommandsLevel}' from Date '${ScriptDate} >> ${ENVIRONMENTHELPFILE}
 echo '===============================================================================' >> ${ENVIRONMENTHELPFILE}
 echo >> ${ENVIRONMENTHELPFILE}
@@ -125,7 +125,7 @@ echo >> ${ENVIRONMENTHELPFILE}
 echo >> ${ENVIRONMENTVARSFILE}
 echo '===============================================================================' >> ${ENVIRONMENTVARSFILE}
 echo '===============================================================================' >> ${ENVIRONMENTVARSFILE}
-echo 'MyBasementCloud bash 4 Linux Environment' >> ${ENVIRONMENTVARSFILE}
+echo 'MyBasementCloud bash 4 Linux RHEL Environment' >> ${ENVIRONMENTVARSFILE}
 echo 'Scripts :  Version '${ScriptVersion}', Revision '${ScriptRevision}', Level '${AliasCommandsLevel}' from Date '${ScriptDate} >> ${ENVIRONMENTVARSFILE}
 echo '===============================================================================' >> ${ENVIRONMENTVARSFILE}
 echo >> ${ENVIRONMENTVARSFILE}
@@ -179,7 +179,7 @@ echo >> ${tempENVHELPFILEvars}
 #========================================================================================
 # 2019-09-28, 2020-05-30, 2020-09-30, 2020-11-18
 
-export MYWORKFOLDER=/__customer
+export MYWORKFOLDER=/home/__customer/
 
 export MYWORKFOLDERSCRIPTS=${MYWORKFOLDER}/_scripts
 export MYWORKFOLDERSCRIPTSB4L=${MYWORKFOLDER}/_scripts/bash_4_linux
@@ -447,7 +447,7 @@ alias reowncustomer='echo; sudo chown -vhR root:adm /__customer; echo'
 printf "${tCYAN}%-30s${tNORM} : %s\n" "reowncustomer" 'Fix user and group ownership of /__customer' >> ${tempENVHELPFILEalias}
 
 alias refreshmybashaliases='echo; cp "/__customer/skel.files/.bash_aliases" "${HOME}/" ; cp "/__customer/skel.files/.private_bash_config" "${HOME}/" ; echo ; source ~/.bash_aliases; echo'
-printf "${tCYAN}%-30s${tNORM} : %s\n" "refreshmybashaliases" 'Refresh my .bash_aliases files from /__customer/skel.files/ folder' >> ${tempENVHELPFILEalias}
+printf "${tCYAN}%-30s${tNORM} : %s\n" "refreshmybashaliases" 'Refresh my .bash_aliases files from /home/__customer/skel.files/ folder' >> ${tempENVHELPFILEalias}
 
 
 #========================================================================================
@@ -657,7 +657,7 @@ tempENVHELPFILEalias=
 
 echo >> ${ENVIRONMENTHELPFILE}
 echo '===============================================================================' >> ${ENVIRONMENTHELPFILE}
-echo 'MyBasementCloud bash 4 Linux Environment' >> ${ENVIRONMENTHELPFILE}
+echo 'MyBasementCloud bash 4 Linux RHEL Environment' >> ${ENVIRONMENTHELPFILE}
 echo 'Scripts :  Version '${ScriptVersion}', Revision '${ScriptRevision}', Level '${AliasCommandsLevel}' from Date '${ScriptDate} >> ${ENVIRONMENTHELPFILE}
 echo '===============================================================================' >> ${ENVIRONMENTHELPFILE}
 echo '===============================================================================' >> ${ENVIRONMENTHELPFILE}
@@ -665,7 +665,7 @@ echo >> ${ENVIRONMENTHELPFILE}
 
 echo >> ${ENVIRONMENTVARSFILE}
 echo '===============================================================================' >> ${ENVIRONMENTVARSFILE}
-echo 'MyBasementCloud bash 4 Linux Environment' >> ${ENVIRONMENTVARSFILE}
+echo 'MyBasementCloud bash 4 Linux RHEL Environment' >> ${ENVIRONMENTVARSFILE}
 echo 'Scripts :  Version '${ScriptVersion}', Revision '${ScriptRevision}', Level '${AliasCommandsLevel}' from Date '${ScriptDate} >> ${ENVIRONMENTVARSFILE}
 echo '===============================================================================' >> ${ENVIRONMENTVARSFILE}
 echo '===============================================================================' >> ${ENVIRONMENTVARSFILE}

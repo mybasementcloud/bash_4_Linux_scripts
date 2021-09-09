@@ -10,12 +10,12 @@
 # APPLY WITHIN THE SPECIFICS THEIR RESPECTIVE UTILIZATION AGREEMENTS AND LICENSES.  AUTHOR DOES NOT
 # AUTHORIZE RESALE, LEASE, OR CHARGE FOR UTILIZATION OF THESE SCRIPTS BY ANY THIRD PARTY.
 #
-# SCRIPT  [.bash_aliases] Alias commands and variables configuration for bash shell launch - Ubuntu
+# SCRIPT  Enable and Install nmtui - Ubuntu
 #
 #
 ScriptDate=2021-09-08
 ScriptVersion=00.01.00
-ScriptRevision=000
+ScriptRevision=005
 TemplateVersion=00.01.00
 TemplateLevel=001
 SubScriptsLevel=001

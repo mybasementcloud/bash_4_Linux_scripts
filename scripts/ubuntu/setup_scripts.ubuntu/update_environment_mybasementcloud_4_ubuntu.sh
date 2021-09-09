@@ -10,7 +10,7 @@
 # APPLY WITHIN THE SPECIFICS THEIR RESPECTIVE UTILIZATION AGREEMENTS AND LICENSES.  AUTHOR DOES NOT
 # AUTHORIZE RESALE, LEASE, OR CHARGE FOR UTILIZATION OF THESE SCRIPTS BY ANY THIRD PARTY.
 #
-# SCRIPT  Installed MyBasementCloud environment based on GitHub for bash_4_Linux_scripts - Ubuntu
+# SCRIPT  Update the installed MyBasementCloud environment after update from GitHub for bash_4_Linux_scripts - Ubuntu
 #
 #
 ScriptDate=2021-09-08
@@ -38,31 +38,6 @@ echo
 DATEDTGS=`date +%Y-%m-%d-%H%M%S%Z`
 DistroExt=${LinuxDistroExtension}
 
-#-------------------------------------------------------------------------------
-# Setup adminscp user for working with WinSCP
-#-------------------------------------------------------------------------------
-
-echo
-echo 'Make user AdminSCP'
-echo
-
-# make adminscp user
-sudo adduser -m -r -G adm,cdrom,sudo,dip,plugdev,lxd -c 'AdminSCP' adminscp
-
-sudo groups ${USER}
-sudo groups adminscp
-
-# adduser adminscp adm,cdrom,sudo,dip,plugdev,lxd
-
-#sudo adduser adminscp adm
-#sudo adduser adminscp cdrom
-#sudo adduser adminscp sudo
-#sudo adduser adminscp dip
-#sudo adduser adminscp plugdev
-#sudo adduser adminscp lxd
-
-#sudo groups adminscp
-#sudo groups ${USER}
 
 #-------------------------------------------------------------------------------
 # Setup Customer '__customer' working folder structure
@@ -73,20 +48,20 @@ export customerfolderroot=
 export customerfoldername=__customer
 export customerfolder=${customerfolderroot}/${customerfoldername}
 
-sudo mkdir ${customerfolder}
-sudo mkdir ${customerfolder}/_scripts
-sudo mkdir ${customerfolder}/_scripts/bash_4_linux
-sudo mkdir ${customerfolder}/_tools
-sudo mkdir ${customerfolder}/download
-sudo mkdir ${customerfolder}/git
-sudo mkdir ${customerfolder}/linux_devops
-sudo mkdir ${customerfolder}/linux_devops/Change_Log
-sudo mkdir ${customerfolder}/linux_devops/dump
-sudo mkdir ${customerfolder}/linux_devops/Reference
-sudo mkdir ${customerfolder}/linux_devops/scripts
-sudo mkdir ${customerfolder}/linux_devops
-sudo mkdir ${customerfolder}/skel.files
-sudo mkdir ${customerfolder}/sudoers.d.backup
+#sudo mkdir ${customerfolder}
+#sudo mkdir ${customerfolder}/_scripts
+#sudo mkdir ${customerfolder}/_scripts/bash_4_linux
+#sudo mkdir ${customerfolder}/_tools
+#sudo mkdir ${customerfolder}/download
+#sudo mkdir ${customerfolder}/git
+#sudo mkdir ${customerfolder}/linux_devops
+#sudo mkdir ${customerfolder}/linux_devops/Change_Log
+#sudo mkdir ${customerfolder}/linux_devops/dump
+#sudo mkdir ${customerfolder}/linux_devops/Reference
+#sudo mkdir ${customerfolder}/linux_devops/scripts
+#sudo mkdir ${customerfolder}/linux_devops
+#sudo mkdir ${customerfolder}/skel.files
+#sudo mkdir ${customerfolder}/sudoers.d.backup
 
 sudo chmod -vR 777 ${customerfolder}
 sudo chown -vhR root:adm ${customerfolder}
@@ -131,6 +106,9 @@ sudo chown -vhR root:adm ${customerfolder}
 #-------------------------------------------------------------------------------
 
 cd /etc/sudoers.d/
+ll
+sudo chmod 777 winscp
+sudo rm winscp
 ll
 ll ${customerfolder}/sudoers.d.backup/
 sudo cp ${customerfolder}/sudoers.d.backup/winscp ./winscp

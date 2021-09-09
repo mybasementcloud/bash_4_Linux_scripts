@@ -14,12 +14,12 @@
 #
 ScriptDate=2021-09-08
 ScriptVersion=00.01.00
-ScriptRevision=000
+ScriptRevision=005
 TemplateVersion=00.01.00
 TemplateLevel=001
 SubScriptsLevel=001
 SubScriptsVersion=0.01.00
-AliasCommandsLevel=020
+AliasCommandsLevel=022
 LinuxTargetEnvironment=Red Hat Enterprise Linux
 LinuxDistroExtension=.rhel
 #

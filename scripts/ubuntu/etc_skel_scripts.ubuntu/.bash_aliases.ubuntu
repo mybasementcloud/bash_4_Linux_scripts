@@ -14,12 +14,12 @@
 #
 ScriptDate=2021-09-08
 ScriptVersion=00.01.00
-ScriptRevision=000
+ScriptRevision=005
 TemplateVersion=00.01.00
 TemplateLevel=001
 SubScriptsLevel=001
 SubScriptsVersion=0.01.00
-AliasCommandsLevel=020
+AliasCommandsLevel=022
 LinuxTargetEnvironment=Ubuntu
 LinuxDistroExtension=.ubuntu
 #
@@ -445,7 +445,7 @@ printf "${tCYAN}%-30s${tNORM} : %s\n" "gochangelogdtg" 'Create a Change Log fold
 alias do_apt_update='echo; sudo apt update; echo; sudo apt upgrade; echo'
 printf "${tCYAN}%-30s${tNORM} : %s\n" "do_apt_update" 'Execute sude apt update and apt upgrade' >> ${tempENVHELPFILEalias}
 
-alias remodcustomer='echo; sudo chmod -R ${MYWORKFOLDER}; echo'
+alias remodcustomer='echo; sudo chmod -R 777 ${MYWORKFOLDER}/; echo'
 printf "${tCYAN}%-30s${tNORM} : %s\n" "remodcustomer" 'Fix file access rights of ${MYWORKFOLDER}' >> ${tempENVHELPFILEalias}
 
 alias reowncustomer='echo; sudo chown -vhR root:adm ${MYWORKFOLDER}; echo'
@@ -608,15 +608,15 @@ historydumpnow ()
     dumpnowfolder=${MYWORKFOLDERDUMP}/${DTGDAY}
     if [ ! -r ${dumpnowfolder} ]; then
         sudo mkdir -pv "${dumpnowfolder}"
-        sudo chmod -R ${dumpnowfolder}
+        sudo chmod -R ${dumpnowfolder}/
     else
-        sudo chmod -R ${dumpnowfolder}
+        sudo chmod -R ${dumpnowfolder}/
     fi
     historyfile="${dumpnowfolder}/current.history.`userhostnow`.txt"
     echo 'Document current history output to dump folder for today with DTG NOW :  '${referencefile}
     echo
     history > ${historyfile}
-    sudo chmod -R ${dumpnowfolder}
+    sudo chmod -R ${dumpnowfolder}/
     echo
     list "${dumpnowfolder}/"
     echo
@@ -638,9 +638,9 @@ historyclearnow ()
     dumpnowfolder=${MYWORKFOLDERDUMP}/${DTGDAY}
     if [ ! -r ${dumpnowfolder} ]; then
         sudo mkdir -pv "${dumpnowfolder}"
-        sudo chmod -R ${dumpnowfolder}
+        sudo chmod -R ${dumpnowfolder}/
     else
-        sudo chmod -R ${dumpnowfolder}
+        sudo chmod -R ${dumpnowfolder}/
     fi
     historyfile="${dumpnowfolder}/current.history.`userhostnow`.txt"
     echo 'Document current history output to dump folder for today with DTG NOW and clear history :  '${referencefile}
@@ -650,7 +650,7 @@ historyclearnow ()
     list "${dumpnowfolder}/"
     echo
     history -c
-    sudo chmod -R ${dumpnowfolder}
+    sudo chmod -R ${dumpnowfolder}/
     echo
     echo 'History dump file FQPN:'
     echo ${historyfile}

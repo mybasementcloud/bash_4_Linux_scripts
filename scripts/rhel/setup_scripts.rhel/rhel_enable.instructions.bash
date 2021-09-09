@@ -8,5 +8,5 @@
 sudo chmod 777 *.sh
 sudo chmod 777 *.bash
 
-sudo ./ubuntu_enable_cockpit.sh
-sudo ./ubuntu_enable_nmtui.sh
+sudo ./rhel_enable_cockpit.sh
+sudo ./rhel_enable_ansiblet.sh

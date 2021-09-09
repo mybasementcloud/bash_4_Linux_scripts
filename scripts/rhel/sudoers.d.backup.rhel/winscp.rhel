@@ -1,0 +1,13 @@
+# Custom configuration - Eric Beasley, 2021-09-08
+# Status:  Experimental
+#
+# WinSCP user enablement
+# RHEL version for MyBasementCloud
+#
+
+adminscp ALL=NOPASSWD: /home/__customer
+adminscp ALL=NOPASSWD: /usr/lib/openssh/sftp-server
+#adminscp ALL=NOPASSWD: ALL
+
+
+

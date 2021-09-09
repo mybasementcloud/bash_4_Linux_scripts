@@ -77,9 +77,12 @@ updir=$(dirname "${curdir}")
 # Copy distribution specific files to standard file lcoations
 #-------------------------------------------------------------------------------
 
+echo
+
 sourcedir=${updir}/sudoers.d.backup${DistroExt}
 if [ -d "${sourcedir}" ] ; then
     # Handle copy of Distro specific files to __customer folder
+    echo 'Updating '${customerfolder}/sudoers.d.backup/' with '${sourcedir}/
     cp ${sourcedir}/winscp${DistroExt} ${customerfolder}/sudoers.d.backup/winscp
 else
     echo 'Where are we?  '${curdir}
@@ -87,9 +90,10 @@ else
     exit
 fi
 
-sourcedir=${updir}/skel.files${DistroExt}
+sourcedir=${updir}/etc_skel_scripts${DistroExt}
 if [ -d "${sourcedir}" ] ; then
     # Handle copy of Distro specific files to __customer folder
+    echo 'Updating '${customerfolder}/skel.files/' with '${sourcedir}/
     cp ${sourcedir}/.bash_aliases${DistroExt} ${customerfolder}/skel.files/.bash_aliases
     cp ${sourcedir}/.private_bash_config${DistroExt} ${customerfolder}/skel.files/.private_bash_config
 else
@@ -98,8 +102,10 @@ else
     exit
 fi
 
-sudo chmod -vR 777 ${customerfolder}
-sudo chown -vhR root:adm ${customerfolder}
+sudo chmod -vR 777 ${customerfolder}/
+sudo chown -vhR root:adm ${customerfolder}/
+
+echo
 
 #-------------------------------------------------------------------------------
 # Setup sudoers.d file for WinSCP

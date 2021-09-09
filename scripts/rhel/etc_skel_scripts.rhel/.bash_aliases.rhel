@@ -19,7 +19,7 @@ TemplateVersion=00.01.00
 TemplateLevel=001
 SubScriptsLevel=001
 SubScriptsVersion=0.01.00
-AliasCommandsLevel=022
+AliasCommandsLevel=025
 LinuxTargetEnvironment=Red Hat Enterprise Linux
 LinuxDistroExtension=.rhel
 #
@@ -537,6 +537,7 @@ help2reference ()
     echo | tee -a -i ${referencefile}
     "$@" --help >> ${referencefile} 2>> ${referencefile}
     echo | tee -a -i ${referencefile}
+    sudo chmod -R 777 ${referencefile}/
     list ${referencefile}
     echo
     echo 'Reference help file FQPN:'
@@ -561,6 +562,7 @@ docset2reference ()
     echo 'Document set output to Reference folder file:  '${referencefile}
     echo
     set > ${referencefile}
+    sudo chmod -R 777 ${referencefile}/
     echo
     list ${referencefile}
     echo
@@ -580,11 +582,17 @@ docset2dumpnow ()
 { 
     DTGSNOW=`DTGSDATE`
     dumpnowfolder=${MYWORKFOLDERDUMP}/${DTGSNOW}
-    mkdir -pv "${dumpnowfolder}"
+    if [ ! -r ${dumpnowfolder} ]; then
+        sudo mkdir -pv "${dumpnowfolder}"
+        sudo chmod -R 777 ${dumpnowfolder}/
+    else
+        sudo chmod -R 777 ${dumpnowfolder}/
+    fi
     referencefile="${dumpnowfolder}/current.set.`hostusernow`.txt"
     echo 'Document set output to dump folder with DTG NOW :  '${referencefile}
     echo
     set > ${referencefile}
+    sudo chmod -R 777 ${referencefile}/
     echo
     list "${dumpnowfolder}/"
     echo
@@ -608,17 +616,18 @@ historydumpnow ()
     dumpnowfolder=${MYWORKFOLDERDUMP}/${DTGDAY}
     if [ ! -r ${dumpnowfolder} ]; then
         sudo mkdir -pv "${dumpnowfolder}"
-        sudo chmod -R ${dumpnowfolder}/
+        sudo chmod -R 777 ${dumpnowfolder}/
     else
-        sudo chmod -R ${dumpnowfolder}/
+        sudo chmod -R 777 ${dumpnowfolder}/
     fi
     historyfile="${dumpnowfolder}/current.history.`userhostnow`.txt"
     echo 'Document current history output to dump folder for today with DTG NOW :  '${referencefile}
     echo
     history > ${historyfile}
-    sudo chmod -R ${dumpnowfolder}/
+    sudo chmod -R 777 ${dumpnowfolder}/
     echo
     list "${dumpnowfolder}/"
+    sudo chmod -R 777 ${dumpnowfolder}/
     echo
     echo 'History dump file FQPN:'
     echo ${historyfile}
@@ -638,15 +647,15 @@ historyclearnow ()
     dumpnowfolder=${MYWORKFOLDERDUMP}/${DTGDAY}
     if [ ! -r ${dumpnowfolder} ]; then
         sudo mkdir -pv "${dumpnowfolder}"
-        sudo chmod -R ${dumpnowfolder}/
+        sudo chmod -R 777 ${dumpnowfolder}/
     else
-        sudo chmod -R ${dumpnowfolder}/
+        sudo chmod -R 777 ${dumpnowfolder}/
     fi
     historyfile="${dumpnowfolder}/current.history.`userhostnow`.txt"
     echo 'Document current history output to dump folder for today with DTG NOW and clear history :  '${referencefile}
     echo
     history > ${historyfile}
-    sudo chmod -R ${dumpnowfolder}/
+    sudo chmod -R 777 ${dumpnowfolder}/
     echo
     list "${dumpnowfolder}/"
     echo

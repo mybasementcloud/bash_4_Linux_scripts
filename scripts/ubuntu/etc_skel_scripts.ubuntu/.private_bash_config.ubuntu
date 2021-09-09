@@ -19,7 +19,7 @@ TemplateVersion=00.01.00
 TemplateLevel=001
 SubScriptsLevel=001
 SubScriptsVersion=0.01.00
-AliasCommandsLevel=022
+AliasCommandsLevel=025
 LinuxTargetEnvironment=Ubuntu
 LinuxDistroExtension=.ubuntu
 #
